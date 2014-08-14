@@ -1,0 +1,30 @@
+<%= form_for(@counter) do |f| %>
+  <% if @counter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@counter.errors.count, "error") %> prohibited this counter from being saved:</h2>
+
+      <ul>
+      <% @counter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sleepcount %><br>
+    <%= f.text_field :sleepcount %>
+  </div>
+  <div class="field">
+    <%= f.label :twitime %><br>
+    <%= f.datetime_select :twitime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="field">
+    <%= f.text_field :created_at, :size => 15, 
+ :class => 'datetimepicker',
+ :value => f.object.created_at ? f.object.created_at.strftime('%Y/%m/%d %H:%M') : '' %>
+  </div>
+<% end %>

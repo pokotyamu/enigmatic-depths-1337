@@ -1,0 +1,31 @@
+<h1>Listing counters</h1>
+<p> Date:<input type="text" class="datepicker" /></p>
+<p> Date:<input type="text" class="datetimepicker" /></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Sleepcount</th>
+      <th>Twitime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @counters.each do |counter| %>
+      <tr>
+        <td><%= counter.sleepcount %></td>
+        <td><%= counter.twitime %></td>
+        <td><%= link_to 'Show', counter %></td>
+        <td><%= link_to 'Edit', edit_counter_path(counter) %></td>
+        <td><%= link_to 'Destroy', counter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Counter', new_counter_path %>

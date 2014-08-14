@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sleepcount:</strong>
+  <%= @counter.sleepcount %>
+</p>
+
+<p>
+  <strong>Twitime:</strong>
+  <%= @counter.twitime %>
+</p>
+
+<%= link_to 'Edit', edit_counter_path(@counter) %> |
+<%= link_to 'Back', counters_path %>
